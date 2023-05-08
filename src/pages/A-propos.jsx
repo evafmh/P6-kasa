@@ -1,7 +1,11 @@
+import React from 'react'
+import Banner from '../components/Banner'
+import bannerImage from '../assets/kalen-emsley-nature-Bkci_8qcdvQ-unsplash 2.png'
+
 function Apropos() {
     return (
         <div>
-            <h1>A propos</h1>
+            <Banner image={bannerImage} text="" />
         </div>
     )
 }

@@ -1,7 +1,11 @@
+import React from 'react'
+import Banner from '../components/Banner'
+import bannerImage from '../assets/samuel-boardman-state-scenic-corridor-unsplash.png'
+
 function Home() {
     return (
         <div>
-            <h1>Accueil</h1>
+            <Banner image={bannerImage} text="Chez vous, partout et ailleurs" />
         </div>
     )
 }

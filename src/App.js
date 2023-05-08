@@ -9,7 +9,8 @@ import FicheLogement from './pages/Fiche-logement'
 import Page404 from './pages/404'
 
 const GlobalStyle = createGlobalStyle`
-    div {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+    body {
         font-family: 'Montserrat', sans-serif;
         padding: 20px;
     }
