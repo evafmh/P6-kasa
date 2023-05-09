@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../components/Banner'
+import Banner from '../components/Banner/Banner'
 import bannerImage from '../assets/samuel-boardman-state-scenic-corridor-unsplash.png'
 
 function Home() {
