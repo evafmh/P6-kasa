@@ -8,3 +8,24 @@
     padding: 40px;
     background: var(--background-light-color);
 }
+
+.error-title {
+    font-size: 288px;
+    margin: 0;
+}
+
+.error404-message {
+    font-size: 36px;
+}
+
+.error404-container {
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error404-home-link {
+    font-size: 18px;
+    padding: 8% 0;
+}
