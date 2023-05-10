@@ -8,7 +8,11 @@ import '../styles/style.css'
 function Home() {
     return (
         <div>
-            <Banner image={bannerImage} text="Chez vous, partout et ailleurs" />
+            <Banner
+                image={bannerImage}
+                text="Chez vous, partout et ailleurs"
+                alt="Bannière affichant des vagues se brisant contre les rochers"
+            />
             <section className="thumbnails-container">
                 {logements.map((logement) => (
                     <Thumbnail

@@ -1,21 +1,23 @@
+/* Home Page */
+
 .thumbnails-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 2em;
     border-radius: 25px;
-    padding: 40px;
+    padding: 3vw;
     background: var(--background-light-color);
 }
 
+/* Error 404 Page */
+
 .error-title {
-    font-size: 288px;
-    margin: 0;
+    font-size: min(40vw, 288px);
+    margin: auto;
 }
 
 .error404-message {
-    font-size: 36px;
+    font-size: min(5vw, 36px);
 }
 
 .error404-container {
@@ -23,9 +25,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .error404-home-link {
     font-size: 18px;
     padding: 8% 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .thumbnails-container {
+        padding: 2vw 0;
+        gap: 1em;
+        background: none;
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
 }

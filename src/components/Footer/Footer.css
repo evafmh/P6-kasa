@@ -5,6 +5,7 @@
 
 .footer-container {
     padding: 25px;
+    margin-top: 3vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
