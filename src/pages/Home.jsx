@@ -7,7 +7,7 @@ import '../styles/style.css'
 
 function Home() {
     return (
-        <div>
+        <main>
             <Banner
                 image={bannerImage}
                 text="Chez vous, partout et ailleurs"
@@ -22,7 +22,7 @@ function Home() {
                     />
                 ))}{' '}
             </section>
-        </div>
+        </main>
     )
 }
 
