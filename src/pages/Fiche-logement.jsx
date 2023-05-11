@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import logements from '../data/logements.json'
+import Slideshow from '../components/Slideshow/Slideshow'
 
 function FicheLogement() {
     //Récupère l'ID de l'URL
@@ -14,9 +15,10 @@ function FicheLogement() {
     }
 
     return (
-        <div>
-            <h1>Fiche</h1>
-        </div>
+        <main>
+            <Slideshow images={logement.pictures} />
+            <h1>{logement.title}</h1>
+        </main>
     )
 }
 
