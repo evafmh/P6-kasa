@@ -1,0 +1,25 @@
+.host {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 20%;
+}
+
+.host-picture {
+    width: min(10vw, 60px);
+    height: min(10vw, 60px);
+    border-radius: 50%;
+}
+
+.host-name {
+    color: var(--primary-color);
+    margin-right: 10px;
+    text-align: right;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .host {
+        width: 50%;
+    }
+}

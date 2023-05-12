@@ -4,6 +4,7 @@ import logements from '../data/logements.json'
 import Slideshow from '../components/Slideshow/Slideshow'
 import Dropdown from '../components/Dropdown/Dropdown'
 import Tag from '../components/Tag/Tag'
+import Host from '../components/Host/Host'
 
 function FicheLogement() {
     //Récupère l'ID de l'URL
@@ -30,6 +31,7 @@ function FicheLogement() {
                     <Tag key={index} tagName={tag} />
                 ))}
             </div>
+            <Host name={logement.host.name} picture={logement.host.picture} />
             <div className="logement-details">
                 <div className="logement-description">
                     <Dropdown
