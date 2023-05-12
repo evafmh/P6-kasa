@@ -10,7 +10,21 @@
     background: var(--background-light-color);
 }
 
+/*A propos page*/
+
+.about-dropdown {
+    padding: 2px 0;
+}
+
 /* Fiche logement Page */
+
+.logement-main-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    margin: 10px 0;
+}
 
 .logement-title,
 .logement-subtitle {
@@ -25,6 +39,14 @@
 
 .logement-tags {
     margin: 10px 0;
+}
+
+.logement-host-and-rating {
+    min-width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8em;
 }
 
 .logement-details {
@@ -70,5 +92,29 @@
         background: none;
         justify-content: center;
         grid-template-columns: 1fr;
+    }
+
+    .logement-main-information {
+        flex-direction: column;
+    }
+
+    .logement-host-and-rating {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logement-titles-and-tags {
+        width: 100%;
+    }
+
+    .logement-details {
+        flex-direction: column;
+    }
+
+    .logement-description,
+    .logement-equipements {
+        width: 100%;
     }
 }

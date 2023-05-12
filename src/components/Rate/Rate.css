@@ -1,0 +1,11 @@
+.star {
+    width: min(5.6vw, 26px);
+    height: min(5.6vw, 26px);
+}
+
+.rate {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.3vw;
+    margin: 4px 0;
+}

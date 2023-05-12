@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import logements from '../data/logements.json'
 import Slideshow from '../components/Slideshow/Slideshow'
 import Dropdown from '../components/Dropdown/Dropdown'
 import Tag from '../components/Tag/Tag'
 import Host from '../components/Host/Host'
+import Rate from '../components/Rate/Rate'
 
 function FicheLogement() {
     //Récupère l'ID de l'URL
@@ -12,26 +13,44 @@ function FicheLogement() {
     // Vérifie si l'ID existe dans la liste de logements
     const logement = logements.find((logement) => logement.id === id)
 
+    useEffect(() => {
+        scrollToTop()
+    }, [])
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
+
     if (!logement) {
         // Redirige vers la page 404 si l'ID n'existe pas
         return <Navigate to="/404" />
     }
-
-    console.log(logement.tags)
 
     return (
         <main>
             <div className="logement-slideshow">
                 <Slideshow images={logement.pictures} />
             </div>
-            <h1 className="logement-title">{logement.title}</h1>
-            <span className="logement-subtitle">{logement.location}</span>
-            <div className="logement-tags">
-                {logement.tags.map((tag, index) => (
-                    <Tag key={index} tagName={tag} />
-                ))}
+            <div className="logement-main-information">
+                <div className="logement-titles-and-tags">
+                    <h1 className="logement-title">{logement.title}</h1>
+                    <span className="logement-subtitle">
+                        {logement.location}
+                    </span>
+                    <div className="logement-tags">
+                        {logement.tags.map((tag, index) => (
+                            <Tag key={index} tagName={tag} />
+                        ))}
+                    </div>
+                </div>
+                <div className="logement-host-and-rating">
+                    <Host
+                        name={logement.host.name}
+                        picture={logement.host.picture}
+                    />
+                    <Rate rating={logement.rating} />
+                </div>
             </div>
-            <Host name={logement.host.name} picture={logement.host.picture} />
             <div className="logement-details">
                 <div className="logement-description">
                     <Dropdown

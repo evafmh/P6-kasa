@@ -36,7 +36,10 @@ function Apropos() {
             />
             <section>
                 {AproposData.map((item, index) => (
-                    <article key={index + item.title}>
+                    <article
+                        className="about-dropdown"
+                        key={index + item.title}
+                    >
                         <Dropdown
                             title={item.title}
                             description={item.description}
