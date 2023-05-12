@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import logements from '../data/logements.json'
 import Slideshow from '../components/Slideshow/Slideshow'
+import Dropdown from '../components/Dropdown/Dropdown'
 
 function FicheLogement() {
     //Récupère l'ID de l'URL
@@ -16,8 +17,24 @@ function FicheLogement() {
 
     return (
         <main>
-            <Slideshow images={logement.pictures} />
+            <div className="logement-slideshow">
+                <Slideshow images={logement.pictures} />
+            </div>
             <h1>{logement.title}</h1>
+            <div className="logement-details">
+                <div className="logement-description">
+                    <Dropdown
+                        title="Description"
+                        description={logement.description}
+                    />
+                </div>
+                <div className="logement-equipements">
+                    <Dropdown
+                        title="Équipements"
+                        description={logement.equipments}
+                    />
+                </div>
+            </div>
         </main>
     )
 }

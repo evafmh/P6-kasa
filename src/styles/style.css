@@ -10,6 +10,19 @@
     background: var(--background-light-color);
 }
 
+/* Fiche logement Page */
+
+.logement-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logement-description,
+.logement-equipements {
+    width: 48%;
+    height: auto;
+}
+
 /* Error 404 Page */
 
 .error-title {

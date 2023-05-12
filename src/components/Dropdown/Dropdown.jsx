@@ -10,6 +10,20 @@ const Dropdown = ({ title, description }) => {
         setIsOpen(!isOpen)
     }
 
+    const renderDescription = () => {
+        if (Array.isArray(description)) {
+            return (
+                <ul className="dropdown-list">
+                    {description.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            )
+        } else {
+            return <div className="dropdown-description">{description}</div>
+        }
+    }
+
     return (
         <div
             className={`dropdown ${isOpen ? 'open' : 'close'}`}
@@ -28,9 +42,7 @@ const Dropdown = ({ title, description }) => {
                     isOpen ? 'dropdown-content' : 'dropdown-content-hidden'
                 }
             >
-                {isOpen ? (
-                    <p className="dropdown-description">{description}</p>
-                ) : null}
+                {isOpen ? renderDescription() : null}
             </div>
         </div>
     )
