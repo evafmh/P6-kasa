@@ -12,6 +12,21 @@
 
 /* Fiche logement Page */
 
+.logement-title,
+.logement-subtitle {
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.logement-title {
+    font-weight: 500;
+    font-size: min(36px, 7vw);
+}
+
+.logement-tags {
+    margin: 10px 0;
+}
+
 .logement-details {
     display: flex;
     justify-content: space-between;

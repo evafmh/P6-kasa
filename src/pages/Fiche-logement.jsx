@@ -3,6 +3,7 @@ import { useParams, Navigate } from 'react-router-dom'
 import logements from '../data/logements.json'
 import Slideshow from '../components/Slideshow/Slideshow'
 import Dropdown from '../components/Dropdown/Dropdown'
+import Tag from '../components/Tag/Tag'
 
 function FicheLogement() {
     //Récupère l'ID de l'URL
@@ -15,12 +16,20 @@ function FicheLogement() {
         return <Navigate to="/404" />
     }
 
+    console.log(logement.tags)
+
     return (
         <main>
             <div className="logement-slideshow">
                 <Slideshow images={logement.pictures} />
             </div>
-            <h1>{logement.title}</h1>
+            <h1 className="logement-title">{logement.title}</h1>
+            <span className="logement-subtitle">{logement.location}</span>
+            <div className="logement-tags">
+                {logement.tags.map((tag, index) => (
+                    <Tag key={index} tagName={tag} />
+                ))}
+            </div>
             <div className="logement-details">
                 <div className="logement-description">
                     <Dropdown
