@@ -50,13 +50,3 @@
     border-radius: 0 0 10px 10px;
     padding: 20px 12px;
 }
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    /* .dropdown-header {
-        font-size: min(13px, 4vw);
-    } */
-    /* .dropdown-description {
-        font-size: min(12px, 3.5vw);
-    } */
-}
