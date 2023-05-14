@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams, Navigate, useLocation } from 'react-router-dom'
 import logements from '../data/logements.json'
 import Slideshow from '../components/Slideshow/Slideshow'
 import Dropdown from '../components/Dropdown/Dropdown'
@@ -12,6 +12,16 @@ function FicheLogement() {
     const { id } = useParams()
     // Vérifie si l'ID existe dans la liste de logements
     const logement = logements.find((logement) => logement.id === id)
+    // Vérifie si le titre formaté dans l'URL est correct
+    const formattedTitle = logement.title
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+    const expectedUrl = `/logements/${logement.id}/${formattedTitle}`
+    //Récupère l'URL
+    const routeLocation = useLocation()
 
     useEffect(() => {
         scrollToTop()
@@ -21,8 +31,8 @@ function FicheLogement() {
         window.scrollTo(0, 0)
     }
 
-    if (!logement) {
-        // Redirige vers la page 404 si l'ID n'existe pas
+    if (!logement || routeLocation.pathname !== expectedUrl) {
+        // Redirige vers la page 404 si l'ID n'existe pas ou si l'URL est incorrect
         return <Navigate to="/404" />
     }
 
