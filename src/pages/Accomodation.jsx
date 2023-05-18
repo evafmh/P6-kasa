@@ -33,6 +33,16 @@ function Accomodation() {
         window.scrollTo(0, 0)
     }
 
+    const renderEquipmentsDropdownContent = () => {
+        return (
+            <ul className="dropdown-list">
+                {accomodation.equipments.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+            </ul>
+        )
+    }
+
     if (!accomodation || routeLocation.pathname !== expectedUrl) {
         // Redirige vers la page erreur 404 si l'ID n'existe pas ou si l'URL est incorrect
         return <Navigate to="/404" />
@@ -73,7 +83,7 @@ function Accomodation() {
                 <div className="accomodation-equipements">
                     <Dropdown
                         title="Équipements"
-                        description={accomodation.equipments}
+                        description={renderEquipmentsDropdownContent()}
                     />
                 </div>
             </div>
