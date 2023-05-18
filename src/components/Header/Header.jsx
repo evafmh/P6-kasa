@@ -23,9 +23,9 @@ function Header() {
                 </Link>
                 <Link
                     className={`header-link ${
-                        location.pathname === '/a-propos' ? 'active' : ''
+                        location.pathname === '/about' ? 'active' : ''
                     }`}
-                    to="/a-propos"
+                    to="/about"
                 >
                     A propos
                 </Link>

@@ -3,7 +3,7 @@ import Banner from '../components/Banner/Banner'
 import Dropdown from '../components/Dropdown/Dropdown'
 import bannerImage from '../assets/kalen-emsley-nature-Bkci_8qcdvQ-unsplash 2.png'
 
-const AproposData = [
+const AboutData = [
     {
         title: 'Fiabilité',
         description:
@@ -26,7 +26,7 @@ const AproposData = [
     },
 ]
 
-function Apropos() {
+function About() {
     return (
         <main>
             <Banner
@@ -35,7 +35,7 @@ function Apropos() {
                 alt="Bannière affichant un paysage de montagnes"
             />
             <section>
-                {AproposData.map((item, index) => (
+                {AboutData.map((item, index) => (
                     <article
                         className="about-dropdown"
                         key={index + item.title}
@@ -51,4 +51,4 @@ function Apropos() {
     )
 }
 
-export default Apropos
+export default About

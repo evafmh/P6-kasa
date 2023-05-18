@@ -4,9 +4,9 @@ import './App.css'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './pages/Home'
-import Apropos from './pages/A-propos'
-import FicheLogement from './pages/Fiche-logement'
-import Page404 from './pages/404'
+import About from './pages/About'
+import Accomodation from './pages/Accomodation'
+import ErrorPage from './pages/Error'
 
 function App() {
     return (
@@ -15,12 +15,12 @@ function App() {
                 <Header />
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route path="/a-propos" element={<Apropos />} />
+                    <Route path="/about" element={<About />} />
                     <Route
-                        path="/logements/:id/*"
-                        element={<FicheLogement />}
+                        path="/accomodations/:id/*"
+                        element={<Accomodation />}
                     />
-                    <Route path="*" element={<Page404 />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
                 <Footer />
             </div>

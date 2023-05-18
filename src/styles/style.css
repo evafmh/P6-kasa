@@ -10,15 +10,15 @@
     background: var(--background-light-color);
 }
 
-/*A propos page*/
+/*About page*/
 
 .about-dropdown {
     padding: 2px 0;
 }
 
-/* Fiche logement Page */
+/* Accomodation Page */
 
-.logement-main-information {
+.accomodation-main-information {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,22 +26,22 @@
     margin: 10px 0;
 }
 
-.logement-title,
-.logement-subtitle {
+.accomodation-title,
+.accomodation-subtitle {
     color: var(--primary-color);
     margin: 10px 0;
 }
 
-.logement-title {
+.accomodation-title {
     font-weight: 500;
     font-size: min(36px, 7vw);
 }
 
-.logement-tags {
+.accomodation-tags {
     margin: 10px 0;
 }
 
-.logement-host-and-rating {
+.accomodation-host-and-rating {
     min-width: 25%;
     display: flex;
     flex-direction: column;
@@ -49,13 +49,13 @@
     gap: 0.8em;
 }
 
-.logement-details {
+.accomodation-details {
     display: flex;
     justify-content: space-between;
 }
 
-.logement-description,
-.logement-equipements {
+.accomodation-description,
+.accomodation-equipements {
     width: 48%;
     height: auto;
 }
@@ -94,27 +94,27 @@
         grid-template-columns: 1fr;
     }
 
-    .logement-main-information {
+    .accomodation-main-information {
         flex-direction: column;
     }
 
-    .logement-host-and-rating {
+    .accomodation-host-and-rating {
         flex-direction: row-reverse;
         align-items: center;
         justify-content: space-between;
         width: 100%;
     }
 
-    .logement-titles-and-tags {
+    .accomodation-titles-and-tags {
         width: 100%;
     }
 
-    .logement-details {
+    .accomodation-details {
         flex-direction: column;
     }
 
-    .logement-description,
-    .logement-equipements {
+    .accomodation-description,
+    .accomodation-equipements {
         width: 100%;
     }
 }
