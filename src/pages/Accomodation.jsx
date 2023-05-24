@@ -8,12 +8,32 @@ import Host from '../components/Host/Host'
 import Rate from '../components/Rate/Rate'
 
 function Accomodation() {
+    //Récupère l'URL
+    const routeLocation = useLocation()
+
+    useEffect(() => {
+        scrollToTop()
+    }, [])
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
+
     //Récupère l'ID de l'URL
     const { id } = useParams()
     // Vérifie si l'ID existe dans la liste de accomodations
+    const isIdValid = accomodations.some(
+        (accomodation) => accomodation.id === id
+    )
+    // Redirige vers page erreur 404 si l'ID du logement n'existe pas
+    if (!isIdValid) {
+        return <Navigate to="/404" />
+    }
+
+    // Récupère les données du logement correspondant à l'id
     const accomodation = accomodations.find(
         (accomodation) => accomodation.id === id
     )
+
     // Vérifie si le titre formaté dans l'URL est correct
     const formattedTitle = accomodation.title
         .toLowerCase()
@@ -22,15 +42,10 @@ function Accomodation() {
         .replace(/\s+/g, '-')
         .replace(/-+/g, '-')
     const expectedUrl = `/accomodations/${accomodation.id}/${formattedTitle}`
-    //Récupère l'URL
-    const routeLocation = useLocation()
 
-    useEffect(() => {
-        scrollToTop()
-    }, [])
-
-    const scrollToTop = () => {
-        window.scrollTo(0, 0)
+    if (routeLocation.pathname !== expectedUrl) {
+        // Redirige vers la page erreur 404 si l'URL est incorrect
+        return <Navigate to="/404" />
     }
 
     const renderEquipmentsDropdownContent = () => {
@@ -41,11 +56,6 @@ function Accomodation() {
                 ))}
             </ul>
         )
-    }
-
-    if (!accomodation || routeLocation.pathname !== expectedUrl) {
-        // Redirige vers la page erreur 404 si l'ID n'existe pas ou si l'URL est incorrect
-        return <Navigate to="/404" />
     }
 
     return (
